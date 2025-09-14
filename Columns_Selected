@@ -1,0 +1,40 @@
+##### DATA ANALYSIS #####
+
+CouncilDistrictCode = District ou se situe le batiment
+YearBuilt = Anne de construction
+NumberofBuildings = Nombre de batiments >>>>> CAMPUS, supprimer cette donnée car plusieurs batiments sur 1 ligne
+NumberofFloors = Nombre d'etages >>>>> supprimer la donnée avec 99 etages (church)
+PropertyGFATotal = Surface m2
+ListOfAllPropertyUseTypes = Types de batiments
+LargestPropertyUseType = Type de batiment principal
+(ENERGYSTARScore = Score Energy)
+SiteEnergyUse(kBtu) = Consommation Total Energy >>> TARGET
+Electricity(kBtu) = Consommation Electricité KBTU
+NaturalGas(kBtu) = Consommation Gaz KBTU
+ComplianceStatus = Etat de la donnée
+TotalGHGEmissions = Consommation CO2 >>> TARGET
+
+1) Selectionner que les batiments non residentiels
+2) Beaucoup de score ENERGYSTARScore manquant
+3) Supprimer les donnees "Non-Compliant" et "Missing Data"
+4) Supprimer les données avec un nombre de batiments eleves
+
+##### GRAPHES #####
+>>> Batiments utilisant de l'electricite et electricité + Gaz >>> BAR
+>>> Correlation entre l'energie et le CO2 >>> SCATTER + ligne de regression
+>>> BOXPLOT Energie + CO2
+>>> La consommation Energie par District >>> BAR
+>>> La surface des batiments
+
+##### Feature ENGINEERING #####
+
+CouncilDistrictCode = localisation
+YearBuilt = temporalité
+NumberofFloors = structure du bâtiment
+
+ListOfAllPropertyUseTypes = indiquer à un modèle si un bâtiment a plusieurs types d'usages via des features binaires ou des proportions
+
+ENERGYSTARScore = features catégorielles à haute cardinalité, il peut être intéressant de créer des tranches de valeurs pour les compresser. A B C D
+
+Electricity(kWh) = BINARY 0 = quels types de sources d'énergie existent au sein de chaque bâtiment
+NaturalGas(therms) = BINARY 1 = quels types de sources d'énergie existent au sein de chaque bâtiment
