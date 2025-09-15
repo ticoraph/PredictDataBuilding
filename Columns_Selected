@@ -1,3 +1,13 @@
+On veut prédire la consommation d'energie et le CO2 d'un batiment à partir  de :
+- Sa localisation
+- Son année de construction
+- Le nombre d'étage
+- Sa superficie
+- Le type de batiment
+- Y a t il un parking (True/False)
+- Sa source d'énergie : electricité ou Electricité + Gaz
+
+
 ##### DATA ANALYSIS #####
 
 CouncilDistrictCode = District ou se situe le batiment
@@ -7,7 +17,6 @@ NumberofFloors = Nombre d'etages >>>>> supprimer la donnée avec 99 etages (chur
 PropertyGFATotal = Surface m2
 ListOfAllPropertyUseTypes = Types de batiments
 LargestPropertyUseType = Type de batiment principal
-(ENERGYSTARScore = Score Energy)
 SiteEnergyUse(kBtu) = Consommation Total Energy >>> TARGET
 Electricity(kBtu) = Consommation Electricité KBTU
 NaturalGas(kBtu) = Consommation Gaz KBTU
@@ -17,7 +26,12 @@ TotalGHGEmissions = Consommation CO2 >>> TARGET
 1) Selectionner que les batiments non residentiels
 2) Beaucoup de score ENERGYSTARScore manquant
 3) Supprimer les donnees "Non-Compliant" et "Missing Data"
-4) Supprimer les données avec un nombre de batiments eleves
+
+##### DONNEES A MODIFIER #####
+
+
+"DELRIDGE NEIGHBORHOODS" dans Neighborhood
+"99" dans NumberofFloors
 
 ##### GRAPHES #####
 >>> Batiments utilisant de l'electricite et electricité + Gaz >>> BAR
@@ -34,7 +48,7 @@ NumberofFloors = structure du bâtiment
 
 ListOfAllPropertyUseTypes = indiquer à un modèle si un bâtiment a plusieurs types d'usages via des features binaires ou des proportions
 
-ENERGYSTARScore = features catégorielles à haute cardinalité, il peut être intéressant de créer des tranches de valeurs pour les compresser. A B C D
+??? = features catégorielles à haute cardinalité, il peut être intéressant de créer des tranches de valeurs pour les compresser. A B C D
 
 Electricity(kWh) = BINARY 0 = quels types de sources d'énergie existent au sein de chaque bâtiment
 NaturalGas(therms) = BINARY 1 = quels types de sources d'énergie existent au sein de chaque bâtiment

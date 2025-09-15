@@ -131,10 +131,6 @@ plt.tight_layout()
 plt.show()
 
 
-plt.boxplot(bc['PropertyGFABuilding(s)'], vert=False)
-plt.tight_layout()
-plt.show()
-
 # On regarde le nombre de valeurs manquantes par colonne ainsi que leur type
 bc.info()
 
